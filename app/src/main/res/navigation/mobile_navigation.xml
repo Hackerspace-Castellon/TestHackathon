@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_bicitravel"
         android:name="com.example.testhackathon.ui.dashboard.DashboardFragment"
         android:label="@string/title_biciTravel"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_mascota"
         android:name="com.example.testhackathon.ui.notifications.NotificationsFragment"
         android:label="@string/title_Mascota"
         tools:layout="@layout/fragment_notifications" />
