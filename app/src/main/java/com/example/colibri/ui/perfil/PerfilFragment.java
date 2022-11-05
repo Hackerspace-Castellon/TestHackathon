@@ -15,11 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.colibri.LoginActivity;
-import com.example.colibri.MainActivity;
 import com.example.colibri.R;
-import com.example.colibri.databinding.FragmentNotificationsBinding;
 import com.example.colibri.databinding.FragmentPerfilBinding;
-import com.example.colibri.ui.notifications.NotificationsViewModel;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;

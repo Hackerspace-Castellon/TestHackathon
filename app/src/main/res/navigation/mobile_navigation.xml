@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/navigation_mascota"
-        android:name="com.example.colibri.ui.notifications.NotificationsFragment"
+        android:name="com.example.colibri.ui.mascota.MacotaFragment"
         android:label="@string/title_Mascota"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_mascota" />
 
     <fragment
         android:id="@+id/navigation_perfil"
