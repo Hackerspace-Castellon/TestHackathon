@@ -33,12 +33,28 @@
 
 
     <TextView
-        android:id="@+id/puntuation"
-        android:layout_width="233dp"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/myfont"
+        android:text="ptos totales"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/puntuation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/puntuation"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.735" />
 
-        android:layout_height="76dp"
+    <TextView
+        android:id="@+id/puntuation"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
         android:background="#00000000"
-        android:text="00000"
+        android:text="12890"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="120px"
@@ -50,18 +66,76 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/feedBtn"
+        android:layout_width="107dp"
+        android:layout_height="66dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/nectar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.82" />
+
+    <ImageButton
+        android:id="@+id/shopBtn"
         android:layout_width="69dp"
         android:layout_height="66dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:cropToPadding="false"
-        android:src="@drawable/ic_notifications_black_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_shopping_cart_24"
+        app:layout_constraintBottom_toBottomOf="@+id/feedBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.881" />
+        app:layout_constraintTop_toTopOf="@+id/feedBtn" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1000"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/myfont"
+        android:text="Néctar"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/feedBtn"
+        app:layout_constraintStart_toStartOf="@+id/feedBtn"
+        app:layout_constraintTop_toBottomOf="@+id/feedBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/myfont"
+        android:text="Shop"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/shopBtn"
+        app:layout_constraintStart_toStartOf="@+id/shopBtn"
+        app:layout_constraintTop_toBottomOf="@+id/shopBtn"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

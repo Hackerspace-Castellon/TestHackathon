@@ -87,14 +87,14 @@ public class HomeFragment extends Fragment {
                 setSlider();
 
                 // no hay conexion
-                Toast.makeText(view.getContext(),"No estas cerca de una parada de bus",Toast.LENGTH_SHORT ).show();
+/*                Toast.makeText(view.getContext(),"No estas cerca de una parada de bus",Toast.LENGTH_SHORT ).show();
                 // volver atras despues de un rato
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         resetSlider();
                     }
-                }, 2000);
+                }, 2000);*/
 
 
             } else {
@@ -106,6 +106,8 @@ public class HomeFragment extends Fragment {
             }
         }
     }
+
+
 
 
     private void initProgressBar(){
