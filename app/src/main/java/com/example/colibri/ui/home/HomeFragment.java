@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -23,6 +24,7 @@ public class HomeFragment extends Fragment {
     private CircularProgressIndicator progressIndicator;
 
     private SlideToActView slider_bus;
+    private TextView infoText;
 
     boolean slider_reversed = false;
 
@@ -34,10 +36,13 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
+        // init big circle
         progressIndicator = (CircularProgressIndicator) binding.PROGRESSBAR;
         initProgressBar();
 
+        // init textview
+
+        infoText = binding.textViewP;
 
         //final TextView textView = binding.textHome;
         //homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
@@ -57,6 +62,10 @@ public class HomeFragment extends Fragment {
                 slider_bus.setReversed(true);
                 slider_bus.setOuterColor(ContextCompat.getColor(view.getContext(), R.color.green));
                 slider_bus.setCompleted(false, false);
+                slider_bus.setSliderIcon(R.drawable.esperandoalbus_02_esperando);
+                infoText.setText("Desliza para bajarte del bus");
+                // se ha subido
+
 
 
             } else {
@@ -64,6 +73,11 @@ public class HomeFragment extends Fragment {
                 slider_bus.setReversed(false);
                 slider_bus.setOuterColor(ContextCompat.getColor(view.getContext(), R.color.red));
                 slider_bus.setCompleted(false, false);
+                slider_bus.setSliderIcon(R.drawable.ic_esperandoalbus_desactivado);
+                infoText.setText("Desliza para subirte en el bus");
+                // sea ha bajado
+
+
             }
         }
     }
