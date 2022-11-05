@@ -7,12 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.colibri.R;
 import com.example.colibri.databinding.FragmentHomeBinding;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
+import com.ncorti.slidetoact.SlideToActView;
 
 public class HomeFragment extends Fragment {
 
@@ -20,6 +22,9 @@ public class HomeFragment extends Fragment {
 
     private CircularProgressIndicator progressIndicator;
 
+    private SlideToActView slider_bus;
+
+    boolean slider_reversed = false;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -36,8 +41,33 @@ public class HomeFragment extends Fragment {
 
         //final TextView textView = binding.textHome;
         //homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+        // register callbacks
+        slider_bus = binding.sliderBus;
+        slider_bus.setOnSlideCompleteListener((new SliderCallback()));
+
         return root;
     }
+
+    private class SliderCallback implements SlideToActView.OnSlideCompleteListener {
+        @Override
+        public void onSlideComplete(SlideToActView view) {
+            if (!slider_reversed){
+                slider_reversed = true;
+                slider_bus.setReversed(true);
+                slider_bus.setOuterColor(ContextCompat.getColor(view.getContext(), R.color.green));
+                slider_bus.setCompleted(false, false);
+
+
+            } else {
+                slider_reversed = false;
+                slider_bus.setReversed(false);
+                slider_bus.setOuterColor(ContextCompat.getColor(view.getContext(), R.color.red));
+                slider_bus.setCompleted(false, false);
+            }
+        }
+    }
+
 
     private void initProgressBar(){
         // init progress bar
