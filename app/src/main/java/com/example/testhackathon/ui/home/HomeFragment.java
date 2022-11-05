@@ -31,17 +31,21 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
 
-
-        // init progress bar
         progressIndicator = (CircularProgressIndicator) binding.PROGRESSBAR;
-        progressIndicator.setIndicatorSize(950);
-        progressIndicator.setTrackThickness(50);
-        progressIndicator.setProgress(30);
-        progressIndicator.setTrackColor(Color.GRAY);
+        initProgressBar();
+
 
         //final TextView textView = binding.textHome;
         //homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
+    }
+
+    private void initProgressBar(){
+        // init progress bar
+        progressIndicator.setIndicatorSize(950);
+        progressIndicator.setTrackThickness(50);
+        progressIndicator.setProgress(30);
+        progressIndicator.setTrackColor(Color.GRAY);
     }
 
     @Override
