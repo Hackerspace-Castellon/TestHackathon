@@ -20,10 +20,6 @@ public class MainActivity extends AppCompatActivity{
 
     private ActivityMainBinding binding;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_TestHackathon);
@@ -34,10 +30,6 @@ public class MainActivity extends AppCompatActivity{
         setContentView(binding.getRoot());
 
         createNavControls();
-
-
-
-
     }
 
 
@@ -53,7 +45,5 @@ public class MainActivity extends AppCompatActivity{
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration); quitar barra de arriba
         NavigationUI.setupWithNavController(binding.navView, navController);
-
-
     }
 }

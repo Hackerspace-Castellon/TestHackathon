@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="543dp"
-        android:layout_height="396dp"
+        android:layout_width="424dp"
+        android:layout_height="328dp"
         android:src="@drawable/ic_home_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,35 +52,33 @@
 
     <com.ncorti.slidetoact.SlideToActView
         android:id="@+id/slider_bus"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="72dp"
 
         app:animation_duration="0"
 
-        app:area_margin="-48dp"
+        app:area_margin="-36dp"
         app:icon_margin="0dp"
         app:inner_color="@color/black"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toBottomOf="@+id/puntuation"
-        app:layout_constraintVertical_bias="0.215"
+        app:layout_constraintVertical_bias="0.235"
         app:outer_color="@color/red"
         app:slider_height="120dp"
         app:slider_icon="@drawable/ic_esperandoalbus_desactivado"
         app:slider_locked="false"
         app:text=""
-        app:text_size="20sp"
-        app:text_appearance="@font/lexend_deca2"/>
+        app:text_size="20sp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/lexend_deca2"
+        android:fontFamily="@font/myfont"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -16,7 +16,7 @@
         <item name="colorSecondaryVariant">@color/red_pocho</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -28,7 +28,7 @@
         <item name="postSplashScreenTheme">@style/Theme.TestHackathon</item>
 
         <!-- Status bar and Nav bar configs -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/red_pocho</item>
+        <item name="android:statusBarColor">@color/red_pocho</item>
         <item name="android:navigationBarColor">@color/red_pocho</item>
     </style>
 </resources>
