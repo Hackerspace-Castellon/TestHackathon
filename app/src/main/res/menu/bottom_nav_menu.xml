@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_baseline_pets_24"
         android:title="@string/title_Mascota" />
 
+    <item
+        android:id="@+id/navigation_perfil"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Perfil" />
+
 </menu>

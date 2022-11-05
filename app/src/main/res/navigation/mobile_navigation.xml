@@ -22,4 +22,10 @@
         android:name="com.example.colibri.ui.notifications.NotificationsFragment"
         android:label="@string/title_Mascota"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_perfil"
+        android:name="com.example.colibri.ui.perfil.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_perfil" />
 </navigation>
