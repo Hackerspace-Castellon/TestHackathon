@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.testhackathon"
+        applicationId "com.example.colibri"
         minSdk 26
         targetSdk 32
         versionCode 1
@@ -29,7 +29,7 @@ android {
     buildFeatures {
         viewBinding true
     }
-    namespace 'com.example.testhackathon'
+    namespace 'com.example.colibri'
 }
 
 

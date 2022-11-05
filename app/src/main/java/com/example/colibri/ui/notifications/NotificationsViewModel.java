@@ -1,4 +1,4 @@
-package com.example.testhackathon.ui.notifications;
+package com.example.colibri.ui.notifications;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

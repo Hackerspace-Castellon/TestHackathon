@@ -1,4 +1,4 @@
-package com.example.testhackathon;
+package com.example.colibri;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.testhackathon.ui.home;
+package com.example.colibri.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

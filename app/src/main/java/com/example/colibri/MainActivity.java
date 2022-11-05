@@ -1,10 +1,6 @@
-package com.example.testhackathon;
+package com.example.colibri;
 
-import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -17,8 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.testhackathon.databinding.ActivityMainBinding;
-import com.google.android.material.progressindicator.CircularProgressIndicator;
+import com.example.colibri.databinding.ActivityMainBinding;
 import com.ncorti.slidetoact.SlideToActView;
 
 public class MainActivity extends AppCompatActivity{

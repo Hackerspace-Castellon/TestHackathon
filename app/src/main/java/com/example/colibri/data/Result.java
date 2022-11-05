@@ -1,4 +1,4 @@
-package com.example.testhackathon.data;
+package com.example.colibri.data;
 
 /**
  * A generic class that holds a result success w/ data or an error exception.

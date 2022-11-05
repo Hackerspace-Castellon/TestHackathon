@@ -1,4 +1,4 @@
-package com.example.testhackathon;
+package com.example.colibri;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +20,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 
 
-import com.example.testhackathon.databinding.ActivityLoginBinding;
+import com.example.colibri.databinding.ActivityLoginBinding;
 
 
 public class LoginActivity extends AppCompatActivity {

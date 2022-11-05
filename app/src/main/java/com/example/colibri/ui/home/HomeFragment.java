@@ -1,18 +1,17 @@
-package com.example.testhackathon.ui.home;
+package com.example.colibri.ui.home;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.testhackathon.R;
-import com.example.testhackathon.databinding.FragmentHomeBinding;
+import com.example.colibri.R;
+import com.example.colibri.databinding.FragmentHomeBinding;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 public class HomeFragment extends Fragment {
