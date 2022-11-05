@@ -1,11 +1,14 @@
 package com.example.colibri.ui.home;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -55,28 +58,50 @@ public class HomeFragment extends Fragment {
     }
 
     private class SliderCallback implements SlideToActView.OnSlideCompleteListener {
+        Context ctx;
+
+        private void setSlider(){
+            slider_bus.setReversed(true);
+            slider_bus.setOuterColor(ContextCompat.getColor(ctx, R.color.green));
+            slider_bus.setCompleted(false, false);
+            slider_bus.setSliderIcon(R.drawable.esperandoalbus_02_esperando);
+            infoText.setText("Desliza para bajarte del bus");
+        }
+
+        private void resetSlider(){
+            slider_bus.setReversed(false);
+            slider_bus.setOuterColor(ContextCompat.getColor(ctx, R.color.red));
+            slider_bus.setCompleted(false, false);
+            slider_bus.setSliderIcon(R.drawable.ic_esperandoalbus_desactivado);
+            infoText.setText("Desliza para subirte en el bus");
+        }
+
         @Override
         public void onSlideComplete(SlideToActView view) {
+            ctx = view.getContext();
+
             if (!slider_reversed){
                 slider_reversed = true;
-                slider_bus.setReversed(true);
-                slider_bus.setOuterColor(ContextCompat.getColor(view.getContext(), R.color.green));
-                slider_bus.setCompleted(false, false);
-                slider_bus.setSliderIcon(R.drawable.esperandoalbus_02_esperando);
-                infoText.setText("Desliza para bajarte del bus");
-                // se ha subido
 
+                // se ha subido
+                setSlider();
+
+                // no hay conexion
+                Toast.makeText(view.getContext(),"No estas cerca de una parada de bus",Toast.LENGTH_SHORT ).show();
+                // volver atras despues de un rato
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        resetSlider();
+                    }
+                }, 2000);
 
 
             } else {
                 slider_reversed = false;
-                slider_bus.setReversed(false);
-                slider_bus.setOuterColor(ContextCompat.getColor(view.getContext(), R.color.red));
-                slider_bus.setCompleted(false, false);
-                slider_bus.setSliderIcon(R.drawable.ic_esperandoalbus_desactivado);
-                infoText.setText("Desliza para subirte en el bus");
-                // sea ha bajado
 
+                // sea ha bajado
+                resetSlider();
 
             }
         }
