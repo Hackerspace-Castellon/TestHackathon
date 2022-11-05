@@ -1,5 +1,7 @@
 package com.example.testhackathon;
 
+import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -13,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.testhackathon.databinding.ActivityMainBinding;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,15 +23,31 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         splashScreen = SplashScreen.installSplashScreen(this);
+
+        checkLogin();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         createNavControls();
+
+
+
+
+
+
+
+    }
+
+    private void checkLogin(){
+
+
     }
 
 
