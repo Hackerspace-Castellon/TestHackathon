@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    android:clipChildren="false"
+    >
 
     <ImageView
         android:id="@+id/imageView2"
@@ -18,6 +20,7 @@
         app:layout_constraintVertical_bias="0.113" />
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
+        app:rotate_icon="false"
         android:id="@+id/PROGRESS_BAR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,6 +29,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
+
          />
 
     <TextView
@@ -48,18 +52,25 @@
 
     <com.ncorti.slidetoact.SlideToActView
         android:id="@+id/slider_bus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="72dp"
         app:animation_duration="0"
+        app:area_margin="-8dp"
         app:inner_color="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
 
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/puntuation"
+
         app:outer_color="@color/red"
-        app:text="Example"
-    />
+        app:text="Desliza al subir al bus"
+        app:text_size="24sp"
+        app:slider_icon="@drawable/ic_esperandoalbus_desactivado"
+
+
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,14 +6,16 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.38055555555555554" />
         <entry key="app/src/main/res/drawable/bicilogo.xml" value="0.288" />
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_esperandoalbus_desactivado.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.288" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.288" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.17502532928064843" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.25815217391304346" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.25815217391304346" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_a.xml" value="0.1" />
       </map>
     </option>
   </component>
