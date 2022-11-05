@@ -2,18 +2,49 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    android:paddingTop="?attr/actionBarSize">
 
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="172dp"
-        android:layout_height="123dp"
-        android:text="Log In with google"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="426dp"
+        android:layout_height="419dp"
+        android:src="@drawable/ic_logocolibri_mesa_de_trabajo_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.086" />
+
+    <ImageView
+        android:id="@+id/google_btn"
+        android:layout_width="401dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/with_text_unpressed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/terminos"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Al registrar una cuenta, confirmas haber leído y aceptas nuestro términos y condiciones."
+        android:textAlignment="center"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/google_btn"
+        app:layout_constraintVertical_bias="0.722"></TextView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
