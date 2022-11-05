@@ -84,10 +84,14 @@ class SlideToActView @JvmOverloads constructor(
 
     /** Text message */
     var text: CharSequence = ""
+        @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
         set(value) {
             field = value
             mTextView.text = value
+            mTextView.textAlignment = TEXT_ALIGNMENT_TEXT_END
             mTextPaint.set(mTextView.paint)
+            mTextView.maxLines = 2
+            mTextView.width = 0
             invalidate()
         }
 
@@ -150,7 +154,7 @@ class SlideToActView @JvmOverloads constructor(
     var iconColor: Int = 0
         set(value) {
             field = value
-            DrawableCompat.setTint(mDrawableArrow, value)
+            //DrawableCompat.setTint(mDrawableArrow, value)
             invalidate()
         }
 
@@ -159,10 +163,11 @@ class SlideToActView @JvmOverloads constructor(
     var sliderIcon: Int = R.drawable.slidetoact_ic_arrow
         set(value) {
             field = value
+
             if (field != 0) {
                 ResourcesCompat.getDrawable(context.resources, value, context.theme)?.let {
                     mDrawableArrow = it
-                    DrawableCompat.setTint(it, iconColor)
+            //        DrawableCompat.setTint(it, iconColor)
                 }
                 invalidate()
             }
@@ -281,7 +286,7 @@ class SlideToActView @JvmOverloads constructor(
         }
 
     /** Public flag to lock the rotation icon */
-    var isRotateIcon = true
+    var isRotateIcon = false
 
     /** Public flag to enable complete animation */
     var isAnimateCompletion = true
@@ -363,7 +368,7 @@ class SlideToActView @JvmOverloads constructor(
 
                 isLocked = getBoolean(R.styleable.SlideToActView_slider_locked, false)
                 isReversed = getBoolean(R.styleable.SlideToActView_slider_reversed, false)
-                isRotateIcon = getBoolean(R.styleable.SlideToActView_rotate_icon, true)
+                isRotateIcon = getBoolean(R.styleable.SlideToActView_rotate_icon, false)
                 isAnimateCompletion = getBoolean(
                     R.styleable.SlideToActView_animate_completion,
                     true
@@ -432,8 +437,7 @@ class SlideToActView @JvmOverloads constructor(
 
         mDrawableTick = loadIconCompat(context, actualCompleteDrawable)
 
-        mTextPaint.textAlign = Paint.Align.CENTER
-
+        mTextPaint.textAlign = Paint.Align.LEFT
         outerColor = actualOuterColor
         innerColor = actualInnerColor
         iconColor = actualIconColor

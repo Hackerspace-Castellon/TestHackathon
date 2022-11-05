@@ -3,9 +3,12 @@ package com.example.testhackathon;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.core.content.ContextCompat;
 import androidx.core.splashscreen.SplashScreen;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,12 +19,17 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.testhackathon.databinding.ActivityMainBinding;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
+import com.ncorti.slidetoact.SlideToActView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private SplashScreen splashScreen;
 
     private ActivityMainBinding binding;
+
+    private SlideToActView slider_bus;
+
+    boolean slider_reversed = false;
 
 
     @Override
@@ -37,10 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
         createNavControls();
 
-
-
-
-
+        // register callbacks
+        slider_bus = findViewById(R.id.slider_bus);
+        slider_bus.setOnSlideCompleteListener((new SliderCallback()));
 
 
     }
@@ -48,6 +55,25 @@ public class MainActivity extends AppCompatActivity {
     private void checkLogin(){
 
 
+    }
+
+    private class SliderCallback implements SlideToActView.OnSlideCompleteListener {
+        @Override
+        public void onSlideComplete(SlideToActView view) {
+            if (!slider_reversed){
+                slider_reversed = true;
+                slider_bus.setReversed(true);
+                slider_bus.setOuterColor(ContextCompat.getColor(view.getContext(), R.color.green));
+                slider_bus.setCompleted(false, false);
+
+
+            } else {
+                slider_reversed = false;
+                slider_bus.setReversed(false);
+                slider_bus.setOuterColor(ContextCompat.getColor(view.getContext(), R.color.red));
+                slider_bus.setCompleted(false, false);
+            }
+        }
     }
 
 

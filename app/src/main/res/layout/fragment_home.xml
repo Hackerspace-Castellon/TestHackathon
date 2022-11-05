@@ -53,24 +53,39 @@
     <com.ncorti.slidetoact.SlideToActView
         android:id="@+id/slider_bus"
         android:layout_width="400dp"
-        android:layout_height="72dp"
+        android:layout_height="wrap_content"
+
         app:animation_duration="0"
-        app:area_margin="-8dp"
+
+        app:area_margin="-48dp"
+        app:icon_margin="0dp"
         app:inner_color="@color/black"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/puntuation"
-
+        app:layout_constraintVertical_bias="0.215"
         app:outer_color="@color/red"
-        app:text="Desliza al subir al bus"
-        app:text_size="24sp"
+        app:slider_height="120dp"
         app:slider_icon="@drawable/ic_esperandoalbus_desactivado"
+        app:slider_locked="false"
+        app:text=""
+        app:text_size="20sp"
+        app:text_appearance="@font/lexend_deca2"/>
 
-
-
-        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_deca2"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_bus" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
