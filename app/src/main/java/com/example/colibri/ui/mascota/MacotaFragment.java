@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -13,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
+import com.example.colibri.R;
 import com.example.colibri.databinding.FragmentMascotaBinding;
 
 public class MacotaFragment extends Fragment {
@@ -42,6 +45,8 @@ public class MacotaFragment extends Fragment {
 
         updatehp();
         nectarBtn.setOnClickListener(new FoodListener());
+        shopBtn.setOnClickListener(new ShopListener());
+
 
         return root;
     }
@@ -49,6 +54,20 @@ public class MacotaFragment extends Fragment {
     private void updatehp(){
         healthBar.setProgress(hp);
         userScore.setText(Integer.toString(puntos_totales));
+
+        // update gif
+        int gif;
+
+        if (hp < 30){
+            gif = R.raw.colibridelgado;
+        } else if (hp < 90){
+            gif = R.raw.colibri;
+        } else {
+            gif = R.raw.colibrigordo;
+        }
+
+        Glide.with(this).asGif().load(gif).into(binding.imageView);
+
     }
 
 
@@ -61,6 +80,15 @@ public class MacotaFragment extends Fragment {
                 hp += 5;
                 updatehp();
             }
+        }
+    }
+
+    private class ShopListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            new secondFragment().show(
+                    getChildFragmentManager(), "TAG");
         }
     }
 

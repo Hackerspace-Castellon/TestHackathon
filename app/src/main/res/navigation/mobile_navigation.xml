@@ -12,6 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/navigation_friends"
+        android:name="com.example.colibri.ui.friends.FriendsFragment"
+        android:label="Amigos"
+        tools:layout="@layout/fragment_friends" />
+
+
+    <fragment
         android:id="@+id/navigation_bicitravel"
         android:name="com.example.colibri.ui.dashboard.DashboardFragment"
         android:label="@string/title_biciTravel"

@@ -13,6 +13,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
 import com.example.colibri.LoginActivity;
 import com.example.colibri.MainActivity;
 import com.example.colibri.Puntuaje;
@@ -81,9 +83,11 @@ public class HomeFragment extends Fragment {
                 binding.puntuation.setText(String.valueOf(TodayFitnessData.pasos));
                 binding.PROGRESSBAR.setProgress(min(round(TodayFitnessData.pasos / 100), 100));
             }
-        }, 1000);
+        }, 600);
 
 
+        // play gif
+        Glide.with(this).asGif().load(R.raw.colibri).into((ImageView) binding.imageView2);
 
         return root;
     }

@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity{
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_bicitravel, R.id.navigation_mascota, R.id.navigation_perfil).build();
+        //AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home,R.id.navigation_friends ,R.id.navigation_bicitravel, R.id.navigation_mascota, R.id.navigation_perfil).build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration); quitar barra de arriba
         NavigationUI.setupWithNavController(binding.navView, navController);

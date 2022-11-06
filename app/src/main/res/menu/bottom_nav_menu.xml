@@ -7,14 +7,20 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_bicitravel"
-        android:icon="@drawable/ic_baseline_pedal_bike_24"
-        android:title="@string/title_biciTravel" />
+        android:id="@+id/navigation_friends"
+        android:icon="@drawable/ic_baseline_people_24"
+        android:title="Amigos" />
+
 
     <item
         android:id="@+id/navigation_mascota"
         android:icon="@drawable/ic_baseline_pets_24"
         android:title="@string/title_Mascota" />
+
+    <item
+        android:id="@+id/navigation_bicitravel"
+        android:icon="@drawable/ic_baseline_pedal_bike_24"
+        android:title="@string/title_biciTravel" />
 
     <item
         android:id="@+id/navigation_perfil"
