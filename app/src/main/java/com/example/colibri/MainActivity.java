@@ -1,7 +1,9 @@
 package com.example.colibri;
 
 import android.os.Bundle;
+import android.util.Log;
 
+import com.example.colibri.data.TodayFitnessData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.core.content.ContextCompat;
@@ -19,9 +21,11 @@ import com.ncorti.slidetoact.SlideToActView;
 public class MainActivity extends AppCompatActivity{
 
     private ActivityMainBinding binding;
+    private static int pasos = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        calcularPasos();
         setTheme(R.style.Theme_TestHackathon);
         super.onCreate(savedInstanceState);
 
@@ -32,6 +36,14 @@ public class MainActivity extends AppCompatActivity{
         createNavControls();
     }
 
+    private void calcularPasos(){
+        TodayFitnessData calculator = new TodayFitnessData(this);
+        calculator.getData();
+    }
+
+    public int getPasos(){
+        return pasos;
+    }
 
 
 

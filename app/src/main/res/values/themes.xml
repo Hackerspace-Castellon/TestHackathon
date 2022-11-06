@@ -24,7 +24,7 @@
     <style name="Theme.TestHackathon.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/red_pocho</item>
         <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_a_round</item>
-        <item name="windowSplashScreenAnimationDuration">600</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
         <item name="postSplashScreenTheme">@style/Theme.TestHackathon</item>
 
         <!-- Status bar and Nav bar configs -->

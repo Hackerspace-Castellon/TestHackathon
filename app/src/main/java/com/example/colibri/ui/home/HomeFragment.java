@@ -1,10 +1,15 @@
 package com.example.colibri.ui.home;
 
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static java.lang.Math.round;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -20,6 +26,7 @@ import com.example.colibri.LoginActivity;
 import com.example.colibri.MainActivity;
 import com.example.colibri.Puntuaje;
 import com.example.colibri.R;
+import com.example.colibri.data.TodayFitnessData;
 import com.example.colibri.databinding.FragmentHomeBinding;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.ncorti.slidetoact.SlideToActView;
@@ -35,8 +42,14 @@ public class HomeFragment extends Fragment {
 
     boolean slider_reversed = false;
 
+    MainActivity activity;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        activity = (MainActivity) getActivity();
+
+
         HomeViewModel homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
@@ -61,6 +74,16 @@ public class HomeFragment extends Fragment {
         // register callbacks
         slider_bus = binding.sliderBus;
         slider_bus.setOnSlideCompleteListener((new SliderCallback()));
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                binding.puntuation.setText(String.valueOf(TodayFitnessData.pasos));
+                binding.PROGRESSBAR.setProgress(min(round(TodayFitnessData.pasos / 100), 100));
+            }
+        }, 300);
+
+
 
         return root;
     }
@@ -128,6 +151,7 @@ public class HomeFragment extends Fragment {
 
     void navigateToPuntajeActivity(){
         Intent intent = new Intent(getContext(), Puntuaje.class);
+        intent.putExtra("pasos", activity.getPasos());
         startActivity(intent);
     }
 
