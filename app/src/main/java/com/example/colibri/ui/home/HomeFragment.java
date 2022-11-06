@@ -1,6 +1,7 @@
 package com.example.colibri.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +16,9 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.colibri.LoginActivity;
+import com.example.colibri.MainActivity;
+import com.example.colibri.Puntuaje;
 import com.example.colibri.R;
 import com.example.colibri.databinding.FragmentHomeBinding;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
@@ -38,6 +42,10 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        // add onClick to ptos
+
+        binding.puntuation.setOnClickListener(new PtoListener());
 
         // init big circle
         progressIndicator = (CircularProgressIndicator) binding.PROGRESSBAR;
@@ -116,6 +124,19 @@ public class HomeFragment extends Fragment {
         progressIndicator.setTrackThickness(50);
         progressIndicator.setProgress(30);
         progressIndicator.setTrackColor(Color.GRAY);
+    }
+
+    void navigateToPuntajeActivity(){
+        Intent intent = new Intent(getContext(), Puntuaje.class);
+        startActivity(intent);
+    }
+
+    private class PtoListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            navigateToPuntajeActivity();
+        }
     }
 
     @Override
