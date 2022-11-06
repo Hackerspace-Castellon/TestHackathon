@@ -81,7 +81,7 @@ public class HomeFragment extends Fragment {
                 binding.puntuation.setText(String.valueOf(TodayFitnessData.pasos));
                 binding.PROGRESSBAR.setProgress(min(round(TodayFitnessData.pasos / 100), 100));
             }
-        }, 300);
+        }, 1000);
 
 
 

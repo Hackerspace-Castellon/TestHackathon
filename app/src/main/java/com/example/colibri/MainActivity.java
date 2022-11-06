@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity{
         setContentView(binding.getRoot());
 
         createNavControls();
+
+        // el mapa el mapa donde esta el mapa
     }
 
     private void calcularPasos(){
